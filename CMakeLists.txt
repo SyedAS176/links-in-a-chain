@@ -15,7 +15,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(node_test tests/node_test.cpp src/node.cpp src/node.cpp)
-add_executable(main main.cpp src/node.cpp)
+add_executable(node_test tests/node_test.cpp src/node.hpp)
+add_executable(main main.cpp src/node.hpp)
 
 target_link_libraries(node_test PRIVATE Catch2::Catch2WithMain)

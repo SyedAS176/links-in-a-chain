@@ -1,18 +1,21 @@
 #pragma once
 
-#include "link.hpp"
-
+template <typename T>
 class Node {
 private:
-    Link* link;
-    Node* nextNode;
+    T* data;
+    Node<T>* nextNode;
 
 public:
-    Node(Link* link);                   // Node constructor for no child
+    Node(T* data) : data(data), nextNode(nullptr) {}                        // Node constructor with no child
 
-    Node(Link* link, Node* nextNode);   // Node constructor for child
+    Node(T* data, Node<T>* nextNode) : data(data), nextNode(nextNode) {}    // Node constructor with child
 
-    Node* next();                       // Return next node
+    Node<T>* next() {                                                       // Return next node in the chain
+        return nextNode;
+    }
 
-    Link* get_data();                   // Returns the Link stored inside
+    T* get_data() {  // Returns the stored data inside (you can have Links or any other data type stored)
+        return data;
+    }
 };
