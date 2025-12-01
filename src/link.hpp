@@ -9,7 +9,7 @@ class Link {
       this->material = material;
     }
 
-    std::string get_material() {
+    std::string get_material() const {
       return this->material;
     }
-}
+};
